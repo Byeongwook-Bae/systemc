@@ -110,7 +110,7 @@ public:
 
 private:
 
-    static int instance_count;
+    static thread_local int instance_count;
 
 private:
 

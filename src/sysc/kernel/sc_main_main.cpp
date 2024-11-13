@@ -45,10 +45,10 @@ namespace sc_core {
 
 extern void pln();
 
-static int    argc_orig;  // Original argc value passed to sc_elab_and_sim.
-static char** argv_orig;  // Original argv value passed to sc_elab_and_sim.
+static thread_local int    argc_orig;  // Original argc value passed to sc_elab_and_sim.
+static thread_local char** argv_orig;  // Original argv value passed to sc_elab_and_sim.
 
-bool sc_in_action = false;
+thread_local bool sc_in_action = false;
 
 int sc_argc()
 {

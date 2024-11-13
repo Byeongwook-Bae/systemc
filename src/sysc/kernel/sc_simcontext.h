@@ -411,8 +411,8 @@ private:
 // Not MT safe.
 
 #if 1
-extern SC_API sc_simcontext* sc_curr_simcontext;
-extern SC_API sc_simcontext* sc_default_global_context;
+extern SC_API thread_local sc_simcontext* sc_curr_simcontext;
+extern SC_API thread_local sc_simcontext* sc_default_global_context;
 
 inline sc_simcontext*
 sc_get_curr_simcontext()

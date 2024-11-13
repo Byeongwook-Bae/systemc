@@ -57,10 +57,10 @@ namespace sc_core {
 //     thread scheduling away from the pthread package.
 // ----------------------------------------------------------------------------
 
-static sc_cor_pthread* active_cor_p=0;   // Active co-routine.
-static pthread_cond_t  create_condition; // See note 1 above.
-static pthread_mutex_t create_mutex;     // See note 1 above.
-static sc_cor_pthread  main_cor;         // Main coroutine.
+static thread_local sc_cor_pthread* active_cor_p=0;   // Active co-routine.
+static thread_local pthread_cond_t  create_condition; // See note 1 above.
+static thread_local pthread_mutex_t create_mutex;     // See note 1 above.
+static thread_local sc_cor_pthread  main_cor;         // Main coroutine.
 
 
 // ----------------------------------------------------------------------------

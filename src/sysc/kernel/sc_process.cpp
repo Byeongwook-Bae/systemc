@@ -51,7 +51,7 @@ sc_event                sc_process_handle::non_event( sc_event::kernel_event );
 
 // Last process that was created:
 
-sc_process_b* sc_process_b::m_last_created_process_p = 0;
+thread_local sc_process_b* sc_process_b::m_last_created_process_p = 0;
 
 //------------------------------------------------------------------------------
 //"sc_process_b::add_static_event"

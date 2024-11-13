@@ -43,8 +43,8 @@
 //  set the environment variable SYSTEMC_MEMPOOL_DONT_USE to 1.
 
 
-static const char* dont_use_envstring = "SYSTEMC_MEMPOOL_DONT_USE";
-static bool use_default_new = false;
+static thread_local const char* dont_use_envstring = "SYSTEMC_MEMPOOL_DONT_USE";
+static thread_local bool use_default_new = false;
 
 
 #include <cstdio>
@@ -244,7 +244,7 @@ sc_mempool_int::~sc_mempool_int()
     delete[] allocators;
 }
 
-static sc_mempool_int* the_mempool = 0;
+static thread_local sc_mempool_int* the_mempool = 0;
 
 void*
 sc_mempool_int::do_allocate(std::size_t sz)

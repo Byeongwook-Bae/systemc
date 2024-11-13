@@ -1537,8 +1537,8 @@ sc_simcontext::trace_cycle( bool delta_cycle )
 	static sc_simcontext sc_default_global_context;
 	sc_simcontext* sc_curr_simcontext = &sc_default_global_context;
 #else
-	SC_API sc_simcontext* sc_curr_simcontext = 0;
-	SC_API sc_simcontext* sc_default_global_context = 0;
+	thread_local SC_API sc_simcontext* sc_curr_simcontext = 0;
+	thread_local SC_API sc_simcontext* sc_default_global_context = 0;
 #endif
 #else
 // Not MT-safe!

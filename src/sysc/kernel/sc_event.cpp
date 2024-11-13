@@ -545,7 +545,7 @@ union sc_event_timed_u
 };
 
 static
-sc_event_timed_u* free_list = 0;
+thread_local sc_event_timed_u* free_list = 0;
 
 void*
 sc_event_timed::allocate()

@@ -456,7 +456,7 @@ class SC_API sc_process_b : public sc_object {
     bool                         m_unwinding;       // true if unwinding stack.
 
   protected:
-    static sc_process_b* m_last_created_process_p; // Last process created.
+    static thread_local sc_process_b* m_last_created_process_p; // Last process created.
 };
 
 typedef sc_process_b sc_process_b;  // For compatibility.

@@ -48,11 +48,11 @@ namespace sc_core {
 
 // main coroutine
 
-static sc_cor_qt main_cor;
+static thread_local sc_cor_qt main_cor;
 
 // current coroutine
 
-static sc_cor_qt* curr_cor = 0;
+static thread_local sc_cor_qt* curr_cor = 0;
 
 // ----------------------------------------------------------------------------
 
@@ -182,7 +182,7 @@ sc_cor_qt::stack_protect( bool enable )
 //  Coroutine package class implemented with QuickThreads.
 // ----------------------------------------------------------------------------
 
-int sc_cor_pkg_qt::instance_count = 0;
+thread_local int sc_cor_pkg_qt::instance_count = 0;
 
 // support functions
 

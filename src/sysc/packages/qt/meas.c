@@ -163,7 +163,7 @@ test01 (int n)
 
 
 static char const test02_msg[] = "QT_BLOCKI (0, 0, test02_aux, t->qt)";
-static qt_t *rootthread;
+static __thread qt_t *rootthread;
 
   static void
 test02_aux1 (void *pu, void *pt, qt_userf_t *f)
